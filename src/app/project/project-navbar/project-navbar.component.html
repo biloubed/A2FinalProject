@@ -1,0 +1,44 @@
+<app-project-main *ngIf="this.selected" [url]=url [Bill]= Bill [Quotation]= Quotation [Project]= Project [selected]= selected></app-project-main>
+<app-project-main-empty *ngIf="!this.selected" [Bill]= Bill [Quotation]= Quotation [Project]= Project ></app-project-main-empty>
+
+
+<button *ngIf="this!.selected.bill_number" (click)="delBill(this.selected.id); unselected()" class="btn-floating btn-large waves-effect waves-light grey bin" [routerLinkActive]=""><i class="material-icons">delete</i></button>
+<button *ngIf="this!.selected.quotation_number" (click)="delQuotation(this.selected.id); unselected()" class="btn-floating btn-large waves-effect waves-light grey bin" [routerLinkActive]=""><i class="material-icons">delete</i></button>
+<nav>
+  <ul>
+
+    <li class="sidebar-first-title">
+      <a routerLink="/project/{{this.Project.id}}" (click)="unselected()">
+        <h5>Projet : {{this.Project.name}}</h5>
+      </a>
+    </li>
+
+    <li>
+      <a class="sidebar-subtitle first-subtitle">Facture</a>
+      <div>
+        <ul>
+          <li *ngFor="let Bill of Bill" (click)="onSelect(this.Bill)">
+            <a>{{this.Bill.bill_number}}_facture</a>
+          </li>
+          <li>
+            <a routerLink="/create-bill/{{ this.Project.id }}">Créer une facture</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li>
+      <a class="sidebar-subtitle">Devis</a>
+        <div>
+          <ul>
+            <li (click)="onSelect(this.Quotation)" *ngFor="let Quotation of Quotation">
+              <a>{{this.Quotation.quotation_number}}</a>
+            </li>
+            <li>
+              <a routerLink="/create-quotation/{{ this.Project.id }}">Créer un devis</a>
+            </li>
+          </ul>
+        </div>
+    </li>
+  </ul>
+</nav>

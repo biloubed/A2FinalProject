@@ -1,0 +1,83 @@
+<div class="container">
+
+  <div class="pdf">
+    <embed [src]="url" width="100%" height="100%" type="application/pdf">
+  </div>
+  <div class="left-main">
+
+
+    <div class="client">
+      <h5 *ngIf="!this.selected.bill_number && !this.selected.quotation_number">Informations client</h5>
+      <h5 *ngIf="this.selected.bill_number">Informations sur de la facture: {{this.selected.bill_number}}</h5>
+      <h5 *ngIf="this.selected.quotation_number">Informations sur le devis: {{this.selected.quotation_number}}</h5>
+      <p>Créer le : {{this.selected.created_at | date:'dd/MM/yy'}}{{this.selected._created_at | date:'dd/MM/yy'}}</p>
+      <p *ngIf="this.selected.email_reminder">Dernier rappel email: {{this.selected.email_reminder | date:'dd/MM/yy'}}</p>
+      <p *ngIf="this.selected.call_reminder">Dernier rappel téléphonique: {{this.selected.call_reminder | date:'dd/MM/yy'}}</p>
+      <p *ngIf="this.selected.limit_date">Date limite: {{this.selected.limit_date | date:'dd/MM/yy'}}</p>
+      <p>Cout total HT: {{this.selected.price_total | number: '0.01'}}€</p>
+      <p>Cout total TTC: {{this.selected.price_total * 1.2 | number: '0.01'}}€</p>
+    </div>
+
+
+
+
+    <div class="button">
+
+
+      <button *ngIf="this.selected.bill_number" class="btn waves-effect waves-light" type="submit" name="action" routerLink="/modify-bill/{{this.selected.id}}">Modifier
+        <i class="material-icons right">send</i>
+      </button>
+      <button *ngIf="this.selected.quotation_number" class="btn waves-effect waves-light" type="submit" name="action" routerLink="/modify-quotation/{{this.selected.id}}">Modifier
+        <i class="material-icons right">send</i>
+      </button>
+
+
+
+      <button *ngIf="this.selected.bill_number && this.selected.status_send == 0" class="btn waves-effect waves-light" type="submit" name="action" (click)="sendBill(this.selected.id)">{{send}}
+        <i class="material-icons right">send</i>
+      </button>
+      <button *ngIf="this.selected.bill_number && this.selected.status_send == 1" class="btn waves-effect waves-light" type="submit" name="action" (click)="sendBill(this.selected.id)" disabled>{{send}}
+        <i class="material-icons right">send</i>
+      </button>
+
+      <button *ngIf="this.selected.quotation_number && this.selected.status_send == 0" class="btn waves-effect waves-light" type="submit" name="action" (click)="sendQuotation(this.selected.id)">{{send}}
+        <i class="material-icons right">send</i>
+      </button>
+      <button *ngIf="this.selected.quotation_number && this.selected.status_send == 1" class="btn waves-effect waves-light" type="submit" name="action" (click)="sendQuotation(this.selected.id)">{{send}}
+        <i class="material-icons right">send</i>
+      </button>
+
+    </div>
+    <div class="valid">
+      <button *ngIf="this.selected.status == 1" (click)="updateRemaining(this.selected.project_id)" class="btn waves-effect waves-light bouton_waiting" type="submit" name="action">Valider le paiement
+        <i class="material-icons right">check</i>
+      </button>
+      <div *ngIf="this.selected.status == 0" (click)="updateRemaining(this.selected.project_id)" class="btn waves-effect waves-light done " type="submit" name="action">Paiement Validé
+      </div>
+      <button *ngIf="this.selected.status == 2" (click)="updateRemaining(this.selected.project_id)" class="btn waves-effect waves-light bouton_warning" type="submit" name="action">Paiement en retard
+        <i class="material-icons right">warning</i>
+      </button>
+
+      <div class="relance" *ngIf="this.selected.bill_number">
+        <button class="btn waves-effect waves-light" (click)="emailReminder()" type="submit" name="action">Relance Email
+          <i class="material-icons right">send</i>
+        </button>
+
+        <button class="btn waves-effect waves-light" (click)="callReminder()" type="submit" name="action">Relance téléphonique
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+
+      <div class="relance" *ngIf="this.selected.quotation_number">
+        <button class="btn waves-effect waves-light" (click)="emailQReminder()" type="submit" name="action">Relance Email
+          <i class="material-icons right">send</i>
+        </button>
+
+        <button class="btn waves-effect waves-light" (click)="callQReminder()" type="submit" name="action">Relance téléphonique
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,6 @@
+{
+    "require": {
+        "jms/serializer-bundle": "^2.4",
+      "ext-json": "*"
+    }
+}

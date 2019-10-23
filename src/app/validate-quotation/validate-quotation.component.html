@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="background">
+  <div class="mainblock">
+    <div class="block">
+      <header>
+        <div class="devisSide">
+          <h1>Devis</h1>
+          <h2>N°: #{{Quotation.quotation_number}}</h2>
+          <h3 class="first">CLIENT : {{Project.name}}</h3>
+          <h3>CONTACT : {{Project.contact}}</h3>
+          <h3>Projet : {{Project.name}}</h3>
+          <h3>{{Project.address}} {{Project.city}} {{Project.postcode}}</h3>
+        </div>
+      </header>
+      <p class="right_text">Sauf précision, tous les prix affichés sont hors taxe</p>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" colspan="4">Designation de la prestation</th>
+          <th scope="col">Prix unitaire HT</th>
+          <th scope="col">Quantité</th>
+          <th scope="col">Montant</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr *ngIf="Quotation.description1">
+          <td colspan="4">{{Quotation.description1}} <br><br><br></td>
+          <td>{{Quotation.unit_price1}}€</td>
+          <td>{{Quotation.quantity1}}</td>
+          <td>{{Quotation.quantity1 * Quotation.unit_price1}}€</td>
+        </tr>
+
+
+        <tr *ngIf="Quotation.description2">
+          <td colspan="4">{{Quotation.description2}}<br><br><br></td>
+          <td>{{Quotation.unit_price2}}€</td>
+          <td>{{Quotation.quantity2}}</td>
+          <td>{{Quotation.quantity2 * Quotation.unit_price2}}€</td>
+        </tr>
+
+
+        <tr *ngIf="Quotation.description3">
+          <td colspan="4">{{Quotation.description3}}<br><br><br></td>
+          <td>{{Quotation.unit_price3}}</td>
+          <td>{{Quotation.quantity3}}</td>
+          <td>{{Quotation.quantity3 * Quotation.unit_price3}}€</td>
+        </tr>
+
+
+        <tr *ngIf="Quotation.description4">
+          <td colspan="4">{{Quotation.description4}}<br><br><br></td>
+          <td>{{Quotation.unit_price4}}</td>
+          <td>{{Quotation.quantity4}}</td>
+          <td>{{Quotation.quantity4 * Quotation.unit_price4}}€</td>
+        </tr>
+
+
+        <tr *ngIf="Quotation.description5">
+          <td colspan="4">{{Quotation.description5}}<br><br><br></td>
+          <td>{{Quotation.unit_price5}}</td>
+          <td>{{Quotation.quantity5}}</td>
+          <td>{{Quotation.quantity5 * Quotation.unit_price5}}€</td>
+        </tr>
+
+
+        <tr *ngIf="Quotation.description6">
+          <td colspan="4">{{Quotation.description6}}<br><br><br></td>
+          <td>{{Quotation.unit_price6}}</td>
+          <td>{{Quotation.quantity6}}</td>
+          <td>{{Quotation.quantity6 * Quotation.unit_price6}}€</td>
+        </tr>
+
+
+        <tr *ngIf="Quotation.description7">
+          <td colspan="4">{{Quotation.description7}}<br><br><br></td>
+          <td>{{Quotation.unit_price7}}</td>
+          <td>{{Quotation.quantity7}}</td>
+          <td>{{Quotation.quantity7 * Quotation.unit_price7}}€</td>
+        </tr>
+
+
+        <tr *ngIf="Quotation.description8">
+          <td colspan="4">{{Quotation.description8}}<br><br><br></td>
+          <td>{{Quotation.unit_price8}}</td>
+          <td>{{Quotation.quantity8}}</td>
+          <td>{{Quotation.quantity8 * Quotation.unit_price8}}€</td>
+        </tr>
+
+
+        <tr *ngIf="Quotation.description9">
+          <td colspan="4">{{Quotation.description9}}<br><br><br></td>
+          <td>{{Quotation.unit_price9}}</td>
+          <td>{{Quotation.quantity9}}</td>
+          <td>{{Quotation.quantity9 * Quotation.unit_price9}}€</td>
+        </tr>
+
+
+        <tr *ngIf="Quotation.description10">
+          <td colspan="4">{{Quotation.description10}}<br><br><br></td>
+          <td>{{Quotation.unit_price10}}</td>
+          <td>{{Quotation.quantity10}}</td>
+          <td>{{Quotation.quantity10 * Quotation.unit_price10}}€</td>
+        </tr>
+
+
+        <tr *ngIf="Quotation.description11">
+          <td colspan="4">{{Quotation.description11}}<br><br><br></td>
+          <td>{{Quotation.unit_price11}}</td>
+          <td>{{Quotation.quantity11}}</td>
+          <td>{{Quotation.quantity11 * Quotation.unit_price11}}€</td>
+        </tr>
+
+
+        <tr *ngIf="Quotation.description12">
+          <td colspan="4">{{Quotation.description12}}<br><br><br></td>
+          <td>{{Quotation.unit_price12}}</td>
+          <td>{{Quotation.quantity12}}</td>
+          <td>{{Quotation.quantity12 * Quotation.unit_price12}}€</td>
+        </tr>
+
+
+        <tr *ngIf="Quotation.description13">
+          <td colspan="4">{{Quotation.description13}}<br><br><br></td>
+          <td>{{Quotation.unit_price13}}</td>
+          <td>{{Quotation.quantity13}}</td>
+          <td>{{Quotation.quantity13 * Quotation.unit_price13}}€</td>
+        </tr>
+
+
+        <tr *ngIf="Quotation.description14">
+          <td colspan="4">{{Quotation.description14}}<br><br><br></td>
+          <td>{{Quotation.unit_price14}}</td>
+          <td>{{Quotation.quantity14}}</td>
+          <td>{{Quotation.quantity14 * Quotation.unit_price14}}€</td>
+        </tr>
+
+
+        <tr *ngIf="Quotation.description15">
+          <td colspan="4">{{Quotation.description15}}<br><br><br></td>
+          <td>{{Quotation.unit_price15}}</td>
+          <td>{{Quotation.quantity15}}</td>
+          <td>{{Quotation.quantity15 * Quotation.unit_price15}}€</td>
+        </tr>
+
+
+        <tr *ngIf="Quotation.description1">
+          <td colspan="4">Total hors taxes</td>
+          <td></td>
+          <td></td>
+          <td>{{Quotation.price_total}}€</td>
+        </tr>
+        <tr *ngIf="Quotation.description1">
+          <td colspan="4">TVA (20%)</td>
+          <td></td>
+          <td></td>
+          <td>{{Quotation.price_total * 0.2}}€</td>
+        </tr>
+
+        </tbody>
+        <tfoot class="table-dark">
+        <td colspan="4">Net à payer TTC</td>
+        <td></td>
+        <td></td>
+        <td>{{Quotation.price_total * 1.2}}€</td>
+        </tfoot>
+      </table>
+
+      <p class="Bon">Bon pour accord. Acceptation de la proposition tarifaire ainsi que des conditions de vente jointes et du règlement.</p>
+      <p class="fait">Fait à {{Project.city}} Le {{myDate | date: 'medium'}}</p>
+      <div class="signature">
+        <p class="signature-position">Signature:<br>{{Project.name}}</p>
+      </div>
+      <p class="outcast firstoutcast"><b>{{Agency.name}}</b></p>
+      <p class="outcast">{{Agency.address}}</p>
+      <p class="outcast"><b>75010 - {{Agency.city}} (France)</b></p>
+      <div class="footerBegin">
+        <div class="left">
+          <div></div>
+          <div>
+            <p class="outcast"><b>Cordonnées Bancaires :</b> xxx</p>
+            <p class="outcast">IBAN : {{Agency.iban}}</p>
+          </div>
+        </div>
+        <div class="right">
+          <p class="outcast"><b>Tél : {{Agency.phone_work}}  </b></p>
+          <p class="outcast"><b>Mail : {{Agency.email}}</b></p>
+        </div>
+      </div>
+      <p class="conditions"><b>Conditions de réglement :</b></p>
+      <p class='dontlook'>Pour toute commande dont le montant s’élève à plus de  trois milles euros hors taxe, un acompte de 30% ( trentes pourcents) est facturé. 50% (cinquantes pourcents) pourront être facturés au cours du projet, répartis sur un certain nombre de jalons.10% (dix pourcents) lors de la livraison. 10% (dix pourcents) après recette /validation."</p>
+
+    </div>
+
+
+  <div class="check">
+    <input [(ngModel)]="valid" class="with-gap" type="checkbox" id="valid" name="valid" value="0" required>
+    <label for="valid">En cochant cette case, vous confirmez avoir lu et approuvé ce devis.</label>
+  </div>
+    <a class="waves-effect waves-light btn create" (click)="validQuotation()">Valider le devis</a>
+</div>
